@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title data-lang="gameTitle">العداء الخارق</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-wrapper">
+        <!-- شاشة القائمة الرئيسية -->
+        <div id="main-menu-screen" class="screen active">
+            <div class="title-container">
+                <img src="assets/images/player_avatar.png" alt="Player Avatar" class="player-avatar">
+                <h1 class="game-title" data-lang="gameTitle">العداء الخارق</h1>
+            </div>
+            <div class="menu">
+                <button id="start-btn" class="btn btn-main" data-lang="start">ابدأ</button>
+                <button id="settings-btn" class="btn btn-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- شاشة اختيار الصعوبة -->
+        <div id="difficulty-screen" class="screen">
+            <h2 class="screen-title" data-lang="selectDifficulty">اختر المستوى</h2>
+            <div class="menu">
+                <button class="btn btn-difficulty" data-difficulty="easy" data-lang="easy">سهل</button>
+                <button class="btn btn-difficulty" data-difficulty="normal" data-lang="normal">عادي</button>
+                <button class="btn btn-difficulty" data-difficulty="hard" data-lang="hard">صعب</button>
+                <button class="btn btn-back" data-lang="back">رجوع</button>
+            </div>
+        </div>
+
+        <!-- شاشة الإعدادات -->
+        <div id="settings-screen" class="screen">
+            <h2 class="screen-title" data-lang="settings">الإعدادات</h2>
+            <div class="settings-options">
+                <div class="setting-item">
+                    <span data-lang="language">اللغة</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="language-toggle">
+                        <span class="slider"></span>
+                        <span class="lang-text">AR</span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <span data-lang="music">الموسيقى</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="music-toggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <button class="btn btn-back" data-lang="back">رجوع</button>
+        </div>
+
+        <!-- لوحة اللعبة الفعلية -->
+        <canvas id="game-canvas"></canvas>
+    </div>
+
+    <!-- عنصر الصوت -->
+    <audio id="background-music" loop src="assets/audio/theme.mp3"></audio>
+
+    <!-- ربط ملفات الجافاسكريبت بالترتيب الصحيح -->
+    <script src="js/input.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/obstacles.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
